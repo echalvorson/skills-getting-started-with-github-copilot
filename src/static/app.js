@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Participants list HTML (no bullet points, with Unregister button)
         let participantsListHtml = '';
         if (details.participants.length) {
-          participantsListHtml = `<div class="participants-list" style="list-style-type:none; margin-left:0;">` +
-            details.participants.map((email) =>
-              `<div class="participant-row" style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">\n                <span>${email}</span>\n                <button class=\"unregister-btn\" data-activity=\"${name}\" data-email=\"${email}\">Unregister</button>\n              </div>`
+          participantsListHtml = `<div class="participants-list">` +
+            details.participants.map((email, idx) =>
+              `<div class="participant-row">\n                <span>${email}</span>\n                <button class=\"unregister-btn\" data-activity=\"${name}\" data-email=\"${email}\">Unregister</button>\n              </div>`
             ).join("") +
             `</div>`;
         } else {
